@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:focus {
+    outline: none;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    overflow-y: hidden;
+
+    background-image: radial-gradient(at top left, #a6ff00 , 20% , #fcc557);
+}
+
+#maxWidth {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.color-red {
+    color: #bd2d2d;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+header {
+    padding: 2.5em 0 0;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+main section {
+    flex: 1 0 0;
+}
+
+section h1 {
+    font-size: 5em;
+}
+
+section p {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+section form {
+    display: flex;
+    gap: 1em;
+}
+
+section input[type="search"] {
+    padding: 1em;
+    font-size: 1.5em;
+    border: 1px solid #28293e;
+    border-radius: 8px;
+
+    background: inherit;
+}
+
+section input[type="search"]::placeholder {
+    color: #28293e;
+}
+
+section input[type=button] {
+    padding: 1em;
+    font-size: 1.2em;
+    border: 1px solid #8e8e8e;
+    border-radius: 6px;
+    cursor: pointer;
+
+    color: #f2f2f2;
+    background-color: #041d46;
+}
+
+section input[type=button]:hover {
+    background-color: color-mix(in srgb, #041d46, #f2f2f2 10%);
+}
+
+.animation {
+    position: relative;
+}
+
+img[alt="emoji"] {
+    position: absolute;
+}
+
+.animation img:nth-child(1) {
+    top: 12rem;
+    left: -5rem;
+    z-index: -1;
+
+    animation: animation-emoji 1.8s ease-in-out infinite alternate;
+}
+
+.animation img:nth-child(2) {
+    top: 4rem;
+    left: 40rem;
+    z-index: -1;
+
+    animation: animation-emoji 2.5s ease-in-out infinite alternate;
+}
+
+.animation img:nth-child(3) {
+    animation: animation-emoji 2.8s ease-in-out infinite alternate;
+}
+
+.animation img:nth-child(4) {
+    top: 32rem;
+    left: 2rem;
+
+    animation: animation-emoji 1.8s ease-in-out infinite alternate-reverse;
+}
+
+.animation img:nth-child(5) {
+    top: -4rem;
+    left: 8rem;
+
+    animation: animation-emoji 2.2s ease-in-out infinite alternate-reverse;
+}
+
+.animation img:nth-child(6) {
+    top: 28rem;
+    left: 38rem;
+
+    animation: animation-emoji 3s ease-in-out infinite alternate;
+}
+
+@keyframes animation-emoji {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-.3rem, -1.5rem);
+    }
+}

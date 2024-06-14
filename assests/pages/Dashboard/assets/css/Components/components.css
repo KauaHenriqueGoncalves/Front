@@ -1,0 +1,8 @@
+.maxWidth {
+    max-width: 90%;
+}
+
+.flex-items {
+    display: flex;
+    gap: 1.5em;
+}

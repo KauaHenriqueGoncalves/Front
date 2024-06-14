@@ -1,0 +1,47 @@
+.maxWidthCenter {
+    max-width: 1076px;
+    margin: 0 auto;
+}
+
+.hide {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 1px;
+    height: 1px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.btn {
+    display: block;
+    width: fit-content;
+    padding: .8em 1em;
+    border-radius: 6px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--ellipse-color);
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: color-mix(in srgb, var(--ellipse-color), transparent 20%);
+}
+
+.ellipse {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    box-shadow: 0 0 30rem 14rem color-mix(in srgb, var(--ellipse-color), transparent 50%);
+    background: transparent;
+    z-index: -1;
+}
+
+@media screen and (max-width: 1150px) {
+    .maxWidthCenter {
+        max-width: 90%;
+    }
+}

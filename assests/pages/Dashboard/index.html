@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Normalize css -->
+    <link rel="stylesheet" href="assets/css/normalize-min.css">
+
+    <!-- Css -->
+    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/Components/components.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navMain">
+        
+        <a href="index.html" class="navMain_logo">
+            Dashboard
+        </a>
+
+        <ul class="navMain_menu">
+            <li><a href="#" class="navMain_menu-item">
+                <i class="fa-solid fa-house-chimney"></i>
+                Dashboard
+            </a></li>
+
+            <li><a href="#" class="navMain_menu-item">
+                <i class="fa-regular fa-calendar"></i>
+                Announced
+            </a></li>
+
+            <li><a href="#" class="navMain_menu-item">
+                <i class="fa-solid fa-pen-to-square"></i>
+                Preparation
+            </a></li>
+
+            <li><a href="#" class="navMain_menu-item">
+                <i class="fa-solid fa-list-check"></i>
+                Sorted
+            </a></li>
+
+            <li><a href="#" class="navMain_menu-item">
+                <i class="fa-solid fa-truck"></i>
+                Distributed
+            </a></li>
+        </ul>
+
+        <a href="#" class="navMain_logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            Logout
+        </a>
+
+    </nav>
+        
+    <!-- Header -->
+    <header class="topHeader">
+        
+        <nav class="topHeader_menu">
+            <a href="#" class="topHeader_menu-item">
+                <i class="fa-regular fa-user"></i>
+                Profile
+            </a>
+
+            <a href="#" class="topHeader_menu-item">
+                <i class="fa-solid fa-gear"></i>
+                Setting
+            </a>
+        </nav>
+
+        <section class="topHeader_profile">
+            <div class="topHeader_profile-image">
+                <img src="assets/image/perfil.png" alt="Photo Profile">
+            </div>
+
+            <div class="topHeader_profile-content">
+                <span class="topHeader_profile-content-name">Daniel Morales</span>
+                <span class="topHeader_profile-content-job">Front-end</span>
+            </div>
+        </section>
+
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+        
+        <section class="todayDataDashboard">
+            <article class="todayDataDashboard-item">
+                <span class="todayDataDashboard-item-nameData">Announced Today</span>
+                <span class="todayDataDashboard-item-numberData">235600</span>
+            </article>
+
+            <article class="todayDataDashboard-item">
+                <span class="todayDataDashboard-item-nameData">Prepared Today</span>
+                <span class="todayDataDashboard-item-numberData">16738</span>
+            </article>
+
+            <article class="todayDataDashboard-item">
+                <span class="todayDataDashboard-item-nameData">Sorted Today</span>
+                <span class="todayDataDashboard-item-numberData">286</span>
+            </article>
+
+            <a href="#" class="todayDataDashboard-dataBtn">See More</a>
+        </section>
+        
+        <figure class="main_dashboard-1">
+            <img src="assets/image/chart1.png" alt="Dashboard Data">
+        </figure>
+
+        <figure class="main_dashboard-2">
+            <img src="assets/image/chart2.png" alt="Dashboard Data">
+        </figure>
+
+        <figure class="main_dashboard-3">
+            <img src="assets/image/chart3.png" alt="Dashboard Data">
+        </figure>
+
+    </main>
+
+</body>
+
+</html>

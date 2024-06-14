@@ -1,0 +1,537 @@
+html {
+    font-size: 62.5%;
+
+    --animation-sun: .8s ease-in-out;
+    --animation-face: .5s ease-in-out;
+    --delay: .4s;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+#TheSun_check {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 1px;
+    height: 1px;
+    outline: none;
+    opacity: 0;
+
+    background: transparent;
+}
+
+.TheSun:has(#TheSun_check:focus-visible) .TheSun_container {
+    outline: 2px solid #000;
+    outline-offset: 1px;
+}
+
+
+/* 
+
+ass: brocoxó
+
+.TheSun:has(#TheSun_check:checked) .sun {
+    background-color: #202020;
+} 
+
+*/
+
+.TheSun_container {
+    position: relative;
+
+    display: block;
+    width: 50em;
+    height: 20em;
+    padding: .8em;
+    border-radius: 110px;
+    box-shadow: 0 0 10px 1px inset;
+    overflow: hidden;
+
+    background-color: blue;
+}
+
+.sun {
+    position: relative;
+
+    width: 40%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px -2px;
+    transition: var(--animation-sun);
+    cursor: pointer;
+    z-index: 1;
+
+    background-color: yellow;
+}
+
+.TheSun:has(#TheSun_check:checked) .sun {
+    transform: translate(150%);
+}
+
+.sunFace {
+    position: relative;
+    top: 23%;
+    left: 0;
+
+    width: 8rem;
+    height: 6em;
+    margin: 0 auto;
+    transition: var(--animation-face);
+}
+
+.eyebrowContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    height: .55rem;
+}
+
+.eyebrow {
+    width: 2.8rem;
+    height: 100%;
+    border-radius: 20px;
+
+    background-color: #000;
+}
+
+.eyebrow:nth-child(1) {
+    transform: translateY(.45rem) rotate(-4deg);
+}
+
+.eyebrow:nth-child(2) {
+    transform: translateY(.45rem) rotate(4deg);
+}
+
+.eyesContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    width: 100%;
+    height: 2.8rem;
+}
+
+.eye {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 2.8rem;
+    height: 100%;
+    border-radius: 50%;
+
+    background-color: #fff;
+}
+
+.iris {
+    width: 65%;
+    height: 65%;
+    border-radius: 50%;
+    transition: var(--animation-face);
+
+    background-color: #000;
+}
+
+.star {
+    max-width: 100%;
+    opacity: 0;
+    transform: translate(2px, -2px);
+    transition: var(--animation-face);
+}
+
+.teardrop {
+    position: absolute;
+    bottom: 2rem;
+
+    width: 9px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: var(--animation-face);
+
+    background-color: blue;
+}
+
+.teardrop::before {
+    content: " ";
+
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin: 0 auto;
+    transform: translateY(-2px) rotate(45deg);
+
+    background-color: blue;
+}
+
+.mouthContainer {
+    width: 100%;
+    height: 1rem;
+}
+
+.mouth {
+    width: 1rem;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 50%;
+
+    border-top: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid #000;
+    border-left: 3px solid #000;
+
+    transform: rotate(-45deg);
+}
+
+
+/* ANIMATION HOVER not checked */
+
+
+.TheSun:has(#TheSun_check:not(:checked)) .sun:hover .sunFace {
+    top: calc(23% + 9%);
+    left: 5rem;
+} 
+
+.TheSun:has(#TheSun_check:not(:checked)) .sun:hover .iris {
+    transform: translate(.25rem, .25rem);
+}
+
+.TheSun:has(#TheSun_check:not(:checked)) .sun:hover .eyebrow:nth-child(1) {
+    transform: translateY(.45rem) rotate(10deg);
+}
+
+.TheSun:has(#TheSun_check:not(:checked)) .sun:hover .eyebrow:nth-child(2) {
+    transform: translateY(.45rem) rotate(-10deg);
+}
+
+.TheSun:has(#TheSun_check:not(:checked)) .sun:hover .mouth {
+    width: .8rem;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+    transform: rotate(0deg);
+
+    background-color: #000;
+}
+
+
+/* ANIMATION checked */
+
+
+.TheSun:has(#TheSun_check:checked) .sun .sunFace {
+    transition-delay: var(--delay);
+    
+    top: calc(23% + 5%);
+    left: -4.5rem;
+} 
+
+.TheSun:has(#TheSun_check:checked) .sun .iris {
+    transition-delay: var(--delay);
+    
+    transform: translate(-.2rem, .2rem);
+}
+
+.TheSun:has(#TheSun_check:checked) .sun .eyebrow:nth-child(1) {
+    transition-delay: var(--delay);
+
+    transform: translateY(.45rem) rotate(-5deg);
+}
+
+.TheSun:has(#TheSun_check:checked) .sun .eyebrow:nth-child(2) {
+    transition-delay: var(--delay);
+
+    transform: translateY(.45rem) rotate(5deg);
+}
+
+.TheSun:has(#TheSun_check:checked) .sun .mouth {
+    transition-delay: var(--delay);
+
+    border-bottom: 3px solid transparent;
+
+    transform: rotate(-90deg);
+}
+
+
+/* ANIMATION CHECKED HOVER */
+
+.TheSun:has(#TheSun_check:checked) .sun:hover .sunFace {
+    transition-delay: var(--delay);
+    
+    top: calc(23% - 5%);
+    left: -4.5rem;
+} 
+
+.TheSun:has(#TheSun_check:checked) .sun:hover .eyebrow:nth-child(1) {
+    transform: translateY(.45rem) rotate(-10deg);
+}
+
+.TheSun:has(#TheSun_check:checked) .sun:hover .eyebrow:nth-child(2) {
+    transform: translateY(.45rem) rotate(10deg);
+}
+
+.TheSun:has(#TheSun_check:checked) .sun:hover .eye .teardrop {
+    transition-delay: 1s;
+
+    bottom: 1.8rem;
+    opacity: 1;
+} 
+
+.TheSun:has(#TheSun_check:checked) .sun:hover .iris .star {
+    transition-delay: 1s;
+
+    opacity: .6;
+}
+
+
+/* CITY */
+
+
+.cityContainer {
+    position: absolute;
+    left: 0;
+    bottom: 6rem;
+
+    width: 100%;
+    height: 7rem;
+}
+
+.background-city {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 2rem;
+    height: 5rem;
+
+    background-color: #041077;
+}
+
+.background-city:nth-child(1) {
+    left: calc( 2rem * 0 );
+
+    width: 2.5rem;
+    height: 4.5rem;
+}
+
+.background-city:nth-child(2) {
+    left: calc( 2rem * 1 );
+
+    width: 1.5rem;
+    height: 2.5rem;
+}
+
+.background-city:nth-child(3) {
+    left: calc( 2rem * 2 );
+
+    width: 1.8rem;
+    height: 4rem;
+}
+
+.background-city:nth-child(4) {
+    left: calc( 2rem * 3 );
+
+    width: 1.9rem;
+    height: 3rem;
+}
+
+.background-city:nth-child(5) {
+    left: calc( 2rem * 4 );
+
+    width: 1.2rem;
+    height: 3.5rem;
+}
+
+.background-city:nth-child(6) {
+    left: calc( 2rem * 5 );
+
+    width: 1rem;
+    height: 2rem;
+}
+
+.background-city:nth-child(7) {
+    left: calc( 2rem * 6 );
+
+    width: 1.9rem;
+    height: 3.5rem;
+}
+
+.background-city:nth-child(8) {
+    left: calc( 2rem * 7 );
+
+    width: 3rem;
+    height: 4rem;
+}
+
+.background-city:nth-child(9) {
+    left: calc( 2rem * 8 );
+
+    width: 2.5rem;
+    height: 4.5rem;
+}
+
+.background-city:nth-child(10) {
+    left: calc( 2rem * 9 );
+
+    width: 1.5rem;
+    height: 2.5rem;
+}
+
+.background-city:nth-child(11) {
+    left: calc( 2rem * 10 );
+
+    width: 1.8rem;
+    height: 4rem;
+}
+
+.background-city:nth-child(12) {
+    left: calc( 2rem * 11 );
+
+    width: 1.9rem;
+    height: 3rem;
+}
+
+.background-city:nth-child(13) {
+    left: calc( 2rem * 12 );
+
+    width: 1.2rem;
+    height: 3.5rem;
+}
+
+.background-city:nth-child(14) {
+    left: calc( 2rem * 13 );
+
+    width: 1.8rem;
+    height: 2rem;
+}
+
+.background-city:nth-child(15) {
+    left: calc( 2rem * 14 );
+
+    width: 1.9rem;
+    height: 3.5rem;
+}
+
+.background-city:nth-child(16) {
+    left: calc( 2rem * 15 );
+
+    width: 3rem;
+    height: 4rem;
+}
+
+.background-city:nth-child(17) {
+    left: calc( 2rem * 16 );
+
+    width: 1.9rem;
+    height: 3.5rem;
+}
+
+.background-city:nth-child(18) {
+    left: calc( 2rem * 17 );
+
+    width: 3rem;
+    height: 4rem;
+}
+
+.background-city:nth-child(19) {
+    left: calc( 2rem * 18 );
+
+    width: 1.2rem;
+    height: 3.5rem;
+}
+
+.background-city:nth-child(20) {
+    left: calc( 2rem * 19 );
+
+    width: 1rem;
+    height: 2rem;
+}
+
+
+/* CITY FRONT */
+
+
+.cityFront {
+    position: absolute;
+    right: 0;
+
+    width: 14rem;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.background-cityFront  {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: grid;
+    grid-template-columns: repeat(8, 3px);
+    grid-auto-rows: 3px;
+    gap: 2px;
+
+    padding: 1px;
+
+    background-color: #202020;
+}
+
+.windows {
+    width: 100%;
+    height: 100%;
+    background-color: #fcf3a4;
+}
+
+.background-cityFront:nth-child(1) {
+    left: calc(2rem * 0);
+
+    width: 3.8rem;
+    height: 4.5rem;
+}
+
+.background-cityFront:nth-child(2) {
+    left: calc(2rem * 2.1);
+
+    grid-template-columns: repeat(6, 3px);
+
+    width: 2.8rem;
+    height: 5rem;
+}
+
+.background-cityFront:nth-child(3) {
+    left: calc(2rem * 3.8);
+
+    grid-template-columns: repeat(4, 3px);
+
+    width: 1.8rem;
+    height: 6rem;
+}
+
+.background-cityFront:nth-child(4) {
+    left: calc(2rem * 4.7);
+
+    grid-template-columns: repeat(9, 3px);
+
+    width: 4rem;
+    height: 2.5rem;
+}
+
+
+
+.floor {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 6rem;
+    z-index: 1;
+
+    background-color: #202020;
+}
